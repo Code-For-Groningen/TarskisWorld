@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Map;
 
-import cfgroningen.tarski.hash.CircleHashStream;
+import cfgroningen.tarski.hash.CircleHashOutputStream;
 import cfgroningen.tarski.shape.Position;
 import cfgroningen.tarski.shape.Shape;
 import cfgroningen.tarski.world.World;
@@ -15,7 +15,7 @@ public class WorldWriter {
     private World world;
 
     public void write(OutputStream stream) throws IOException {
-        try (CircleHashStream hashStream = new CircleHashStream(stream)) {
+        try (CircleHashOutputStream hashStream = new CircleHashOutputStream(stream)) {
 
             hashStream.appendLine(world.getSoftwareVersion());
             hashStream.appendLine(world.getOperatingSystem());

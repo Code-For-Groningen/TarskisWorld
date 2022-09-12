@@ -20,6 +20,7 @@ import java.util.jar.JarFile;
 import org.junit.Test;
 
 import cfgroningen.tarski.reader.WorldReader;
+import cfgroningen.tarski.reader.WorldValidator;
 import lombok.SneakyThrows;
 
 public class WorldReaderTest {
@@ -44,6 +45,18 @@ public class WorldReaderTest {
             InputStream stream = getWorldTestFile(worldName);
             WorldReader reader = new WorldReader(stream);
             reader.parse();
+        }
+    }
+
+    @Test
+    public void testFullValidation() throws IOException, URISyntaxException {
+        List<String> filenames = getFilenamesForDirnameFromCP("worlds");
+        for (String filename : filenames) {
+            String worldName = filename.substring(filename.lastIndexOf("/") + 1);
+
+            InputStream stream = getWorldTestFile(worldName);
+            WorldValidator validator = new WorldValidator(stream);
+            validator.validate();
         }
     }
 
