@@ -22,12 +22,12 @@ public class WorldWriterTest {
 
         Map<Position, Shape> shapes = new HashMap<>();
 
-        shapes.put(new Position(3, 3), new Shape(ShapeType.CUBE, 1, "g"));
+        shapes.put(new Position(3, 3), new Shape(ShapeType.CUBE, 1, "a"));
 
         world.setShapes(shapes);
 
         world.setSoftwareVersion("7.1.0.17405");
-        world.setOperatingSystem("windows:something");
+        world.setOperatingSystem("wnds:Windows Server 20126.2");
         world.setFileType("WldF");
         world.setTimestampsList("C0");
 
