@@ -43,9 +43,7 @@ public class WorldReaderTest {
 
             InputStream stream = getWorldTestFile(worldName);
             WorldReader reader = new WorldReader(stream);
-            World w = reader.parse();
-
-            System.out.println("World "+worldName+" "+w.getSoftwareVersion()+" "+w.getOperatingSystem()+" "+w.getFileType()+" Shapes: "+w.getShapes().size());
+            reader.parse();
         }
     }
 
