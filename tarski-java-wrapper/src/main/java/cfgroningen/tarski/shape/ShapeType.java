@@ -1,7 +1,16 @@
 package cfgroningen.tarski.shape;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public enum ShapeType {
-    PYRAMID, CUBE, DODECAHEDRON;
+    PYRAMID(1),
+    CUBE(2),
+    DODECAHEDRON(3);
+
+    private int id;
 
     public static ShapeType byNumber(int number) {
         switch (number) {
