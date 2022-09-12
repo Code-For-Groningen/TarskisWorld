@@ -6,10 +6,10 @@ import java.nio.charset.StandardCharsets;
 
 import lombok.Getter;
 
-public class CircleHashStream extends OutputStream {
+public class CircleHashOutputStream extends OutputStream {
     private OutputStream underlyingStream;
 
-    public CircleHashStream(OutputStream underlyingStream) {
+    public CircleHashOutputStream(OutputStream underlyingStream) {
         this.underlyingStream = underlyingStream;
     }
 
